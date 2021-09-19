@@ -1,0 +1,2 @@
+# If-error-Then-
+#RequireAdmin  FEATURE_BROWSER_EMULATION("AutoIt3.exe", 10001)   Func FEATURE_BROWSER_EMULATION($sExe, $iVer)     Local $key = "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION"     Local $key64 = "HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Internet Explorer\MAIN\FeatureControl\FEATURE_BROWSER_EMULATION"      ; If OS IS 64 bit     If @OSArch === "X64" Then $key = $key64      RegWrite($key, $sExe, "REG_DWORD", $iVer)     If @error Then Return SetError(@error)
